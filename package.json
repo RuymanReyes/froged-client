@@ -4,5 +4,8 @@
   "description": "Froged client",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "scripts": {
+      "demo": "tsc demo && node demo.js" 
+    },
   "private": false
 }
