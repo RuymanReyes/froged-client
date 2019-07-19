@@ -1,0 +1,19 @@
+import { HttpClient } from 'typed-rest-client/HttpClient';
+import { IHeaders, IHttpClientResponse } from 'typed-rest-client/Interfaces';
+
+export class PublicRoutes {
+
+    public dev: boolean;
+    public token: string;
+    public slug: string;
+
+    login(email: string, password: string) {
+        let client: HttpClient = new HttpClient('');
+        return client.patch("https://dev-api.froged.com/public/login", JSON.stringify({ email, password }))
+          .then((resp: IHttpClientResponse) => resp.readBody())
+          .then((body: string) => {
+              console.log({ body })
+            })
+          .catch((err) => console.log({ err }));
+    }  
+}
