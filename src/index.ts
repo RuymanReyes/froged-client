@@ -1,6 +1,8 @@
 import { PublicRoutes } from './~public';
 import { OriginsRoutes } from './~origins';
 
+export { iOrigin } from './interfaces/origin.interface';
+
 export class FrogedClient {
 
     // CONSTRUCTOR
