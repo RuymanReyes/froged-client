@@ -1,0 +1,8 @@
+{
+  "name": "froged-client",
+  "version": "0.0.1",
+  "description": "Froged client",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false
+}
