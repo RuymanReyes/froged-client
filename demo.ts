@@ -20,5 +20,4 @@ frogedClient.origins.getAll().then((origins: iOrigin[]) => {
   //   .then((apps: iApp[]) => frogedClient.setSlug(apps[0].slug))
   //   .then(() => frogedClient.contacts.getAll())
   //   .then((contacts: iContact[]) => {
-
   //   })
