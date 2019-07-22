@@ -7,15 +7,18 @@ export class OriginsRoutes {
     public dev: boolean;
     public token: string;
     public slug: string;
+    public apikey: string;
 
     getAll(): Promise<iOrigin[]> {
         let client: HttpClient = new HttpClient('');
-        console.log(`https://${ this.dev? 'dev-' : '' }api.froged.com/ws/${ this.slug }/origins`);
-        return client.get(`https://${ this.dev? 'dev-' : '' }api.froged.com/ws/${ this.slug }/origins`, { token: this.token })
-          .then((resp: IHttpClientResponse) => resp.readBody())
-          .then((body: string) => {
-              return JSON.parse(body).data;
-            })
-          .catch((err) => console.error("Error de petición"));
+        let headers: any = { token: this.token };
+        if (this.apikey) 
+            headers.apikey = this.apikey;
+        return client.get(`https://${ this.dev? 'dev-' : '' }api.froged.com/ws/${ this.slug }/origins`, headers)
+            .then((resp: IHttpClientResponse) => resp.readBody())
+            .then((body: string) => {
+                return JSON.parse(body).data;
+              })
+            .catch((err) => console.error("Error de petición"));
     }  
 }

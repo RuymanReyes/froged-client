@@ -20,6 +20,9 @@ export class FrogedClient {
         this.public.slug = slug;
         this.origins.slug = slug;
     }
+    public setApikey(apikey: string) {
+        this.origins.apikey = apikey;  
+    }
 
     // ROUTES
     public public: PublicRoutes = new PublicRoutes;
