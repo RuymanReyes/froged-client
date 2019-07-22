@@ -9,7 +9,7 @@ export class PublicRoutes {
 
     login(email: string, password: string) {
         let client: HttpClient = new HttpClient('');
-        return client.patch("https://dev-api.froged.com/public/login", JSON.stringify({ email, password }))
+        return client.patch("http://localhost:5000/public/login", JSON.stringify({ email, password }))
           .then((resp: IHttpClientResponse) => resp.readBody())
           .then((body: string) => {
               console.log({ body })

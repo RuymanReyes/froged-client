@@ -1,7 +1,7 @@
 export interface iOrigin
   {
-    id: string;
+    id?: string;
     origin: string;
-    createdAt: any;
-    updatedAt: any;
+    createdAt?: any;
+    updatedAt?: any;
   }
